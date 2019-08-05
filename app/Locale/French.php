@@ -52,8 +52,8 @@ final class French implements LangInterface
 			'ABOUT_ALBUM' => 'À propos de l\'album',
 			'DELETE_ALBUM' => 'Supprimer l\'album',
 			'MOVE_ALBUM' => 'Move Album',
-			'FULLSCREEN_ENTER' => 'Enter Fullscreen',
-			'FULLSCREEN_EXIT' => 'Exit Fullscreen',
+			'FULLSCREEN_ENTER' => 'Mode plein écran',
+			'FULLSCREEN_EXIT' => 'Quitter le mode plein écran',
 
 			'DELETE_ALBUM_QUESTION' => 'Supprimer l\'album et ses photos',
 			'KEEP_ALBUM' => 'Garder l\'album',

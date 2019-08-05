@@ -1599,6 +1599,10 @@ header.bind = function () {
 		search.reset();
 	});
 
+	header.dom('#button_download').on(eventName, function () {
+		photo.getArchive([photo.getID()], 'FULL');
+	});
+
 	header.bind_back();
 
 	return true;

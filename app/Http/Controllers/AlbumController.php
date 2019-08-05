@@ -624,6 +624,7 @@ class AlbumController extends Controller
 						return 'false';
 					}
 					$zipTitle = str_replace($badChars, '', $album->title);
+					$zipTitle = str_replace(['é'], ['e'], $zipTitle);
 					if ($zipTitle === '') {
 						$zipTitle = 'Untitled';
 					}

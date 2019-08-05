@@ -97,12 +97,15 @@
         <a class="button button--star" id="button_star" title="{{ $locale['STAR_PHOTO'] }}">
             <svg class="iconic"><use xlink:href="#star"></use></svg>
         </a>
-        <a class="button button--eye" id="button_share" title="{{ $locale['SHARE_PHOTO'] }}">
-            <svg class="iconic"><use xlink:href="#eye"></use></svg>
-        </a>
-        <a class="button button--info" id="button_info" title="{{ $locale['ABOUT_PHOTO'] }}">
-            <svg class="iconic"><use xlink:href="#info"></use></svg>
-        </a>
+<!--        <a class="button button--eye" id="button_share" title="{{ $locale['SHARE_PHOTO'] }}">-->
+<!--            <svg class="iconic"><use xlink:href="#eye"></use></svg>-->
+<!--        </a>-->
+<!--        <a class="button button--info" id="button_info" title="{{ $locale['ABOUT_PHOTO'] }}">-->
+<!--            <svg class="iconic"><use xlink:href="#info"></use></svg>-->
+<!--        </a>-->
+		<a class="button" id="button_download" title="{{ $locale['DOWNLOAD'] }}">
+			<svg class="iconic"><use xlink:href="#cloud-download"></use></svg>
+		</a>
         <a class="button" id="button_move" title="{{ $locale['MOVE'] }}">
             <svg class="iconic"><use xlink:href="#folder"></use></svg>
         </a>

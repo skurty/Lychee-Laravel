@@ -2832,15 +2832,17 @@ contextMenu.photoMore = function (photoID, e) {
 
 	var showFull = photo.json.url && photo.json.url !== '';
 
-	var items = [{ title: build.iconic('fullscreen-enter') + lychee.locale['FULL_PHOTO'], visible: !!showFull, fn: function fn() {
+	var items = [
+		{ title: build.iconic('fullscreen-enter') + lychee.locale['FULL_PHOTO'], visible: !!showFull, fn: function fn() {
 			return window.open(photo.getDirectLink());
-		} }, { title: build.iconic('cloud-download') + lychee.locale['DOWNLOAD'], visible: !!showDownload, fn: function fn() {
+		} }/*, { title: build.iconic('cloud-download') + lychee.locale['DOWNLOAD'], visible: !!showDownload, fn: function fn() {
 			return photo.getArchive([photoID], 'FULL');
 		} }, { title: build.iconic('cloud-download') + lychee.locale['DOWNLOAD_MEDIUM'], visible: !!showMedium, fn: function fn() {
 			return photo.getArchive([photoID], 'MEDIUM');
 		} }, { title: build.iconic('cloud-download') + lychee.locale['DOWNLOAD_SMALL'], visible: !!showSmall, fn: function fn() {
 			return photo.getArchive([photoID], 'SMALL');
-		} }];
+		} }*/
+		];
 
 	basicContext.show(items, e.originalEvent);
 };
@@ -3083,6 +3085,10 @@ header.bind = function () {
 		search.reset();
 	});
 
+	header.dom('#button_download').on(eventName, function () {
+		photo.getArchive([photo.getID()], 'FULL');
+	});
+
 	header.bind_back();
 
 	return true;
@@ -3185,8 +3191,12 @@ header.setMode = function (mode) {
 				$('#button_info_album, #button_share_album, #button_move_album').hide();
 				$('#button_trash_album, .button_add, .header__divider', '.header__toolbar--album').show();
 			} else {
-				$('#button_info_album, #button_share_album').show();
-				if (album.isUploadable()) {
+				if (!lychee.publicMode) {
+					$('#button_info_album, #button_share_album').show();
+				} else {
+					$('#button_info_album, #button_share_album').hide();
+				}
+				if (album.isUploadable() && !lychee.publicMode) {
 					$('#button_trash_album, #button_move_album, .button_add, .header__divider', '.header__toolbar--album').show();
 					$('#button_share_album').removeClass('button--share').addClass('button--eye').find('use').attr('xlink:href', '#eye');
 				} else {
