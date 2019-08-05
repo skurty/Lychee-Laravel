@@ -24,10 +24,10 @@
 Options -Indexes
 
 <IfModule mod_php7.c>
-	php_value max_execution_time 200
-	php_value post_max_size 500M
-	php_value upload_max_filesize 500M
-	php_value max_file_uploads 100
+	php_value max_execution_time 600
+	php_value post_max_size 1000M
+	php_value upload_max_filesize 1000M
+	php_value max_file_uploads 200
 </IfModule>
 
 # ---
